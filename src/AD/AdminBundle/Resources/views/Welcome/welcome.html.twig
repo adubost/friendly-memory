@@ -6,25 +6,39 @@
 
 {%block body %}
     <div class="container">
-        <div class="jumbotron text-center">
+        <div class="row jumbotron text-center">
             <h2>Welcome in Aude's University</h2>
         </div>
 
-        <div>
+        <div class="row">
             {{ form_start(form, {'attr': {'class': 'form-inline'} } ) }}
             {{ form_row(form.username) }}
             {{ form_row(form.password) }}
             <button type="submit" class="btn btn-primary">Sign In</button>
             {{ form_end(form) }}
         </div>
-        <div class="col-sm-8">
+        <div class="row">
+            <article class="col-md-9">Lorem ipsum dolor sit amet, ea est solum apeirian. Per in fabulas maluisset, eam et corpora rationibus instructior. His in putent aperiam, ad sumo mazim eam. Tempor oporteat atomorum eu vix.
 
-            <img src="/images/Students_studying.jpeg" alt="Students studying" class="img-responsive">
+                Pri eu regione sensibus posidonium. Docendi sententiae no vel. No veri aliquip efficiendi has, sumo vero et quo. Suas iudicabit no duo, facilis minimum propriae vix in. Ei pri laboramus vulputate persequeris, ad has assum ancillae interpretaris.
 
+                Vim ut adhuc labitur, et eum magna congue mollis. Mel soleat expetendis scribentur ea, ut minim inermis vel. Ut probo singulis consectetuer eum. Dicit percipitur sadipscing sed ex, iuvaret scribentur ad vel. Simul dicam verterem cu nam.
+
+                Aliquid scribentur pri ad. Et oporteat efficiendi vel, mel ei tale mucius reprimique. Ullum periculis no duo, agam option an has, eu pro suas omittam. Brute aliquando his at.
+
+                Ne qui cetero numquam, natum solet concludaturque te has, accumsan principes sit eu. Simul facilisis vix ex. Nobis virtute reprimique ut vis. Enim consetetur temporibus mei ex. Et vim dicat torquatos persequeris, quo debet consequat scriptorem no, labore deseruisse ad cum. Augue officiis consectetuer vis id, nec elit meis et, eum facer viderer scaevola et.
+            </article>
+            <aside class="col-md-3">
+                <img src="/images/aude_logo.png" alt="logo" class="thumbnail" width="30%">
+            </aside>
         </div>
-        <div class="col-sm-4">
-            <img src="/images/aude_logo.png" alt="logo" class="thumbnail" width="30%">
 
+        <div class="row">
+            <div class="col-sm-12">
+
+                <img src="/images/Students_studying.jpeg" alt="Students studying" class="img-responsive">
+
+            </div>
+            
         </div>
-    </div>
-{% endblock %}
+    {% endblock %}

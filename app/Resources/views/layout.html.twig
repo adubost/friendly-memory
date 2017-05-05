@@ -8,11 +8,10 @@
         <title>{% block title %}Welcome to the Aude University!{% endblock %}</title>
         {% block stylesheets %}
             {% stylesheets 
-            '@bootstrap_css'
+            '@bootstrap_css' 'css/main.css'
             filter='cssrewrite' 
             %}
             <link rel="stylesheet" href="{{ asset_url }}" />
-            
             {% endstylesheets %}
         {% endblock %}
     </head>
