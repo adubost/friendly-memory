@@ -1,0 +1,28 @@
+{# empty Twig template #}
+
+{% extends "ADLearningBundle::layout.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h2>Courses</h2>
+        </div>
+        <div class="container">
+            <div class='row'>
+                <div class="col-sm-9">
+                    <ul class="list-group">
+                        <a href="#" class="list-group-item disabled">
+                            <h4>Choose a Course to see more details</h4>
+                        </a>
+                        {% for course in list_courses%}
+                            <li class="list-group-item"><a href="{{ path('ad_learning_edit_one_course', {'id':course.id}) }}">{{ course.courseName }}</a></li>
+                            {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+

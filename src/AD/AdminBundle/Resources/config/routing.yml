@@ -1,0 +1,3 @@
+ad_admin_welcome:
+    path:     /
+    defaults: { _controller: ADAdminBundle:Welcome:login}

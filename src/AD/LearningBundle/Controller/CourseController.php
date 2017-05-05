@@ -1,0 +1,61 @@
+<?php
+
+//src/AD/LearningBundle/Controller/CourseController.php
+
+namespace AD\LearningBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use AD\LearningBundle\Entity\CourseModuleLink;
+use Symfony\Component\HttpFoundation\Request;
+use AD\LearningBundle\Entity\Course;
+
+class CourseController extends Controller {
+
+    public function editAction() {
+        $repository = $this->getDoctrine()->getManager()->getRepository('ADLearningBundle:Course');
+        $list_courses = $repository->findAll();
+        return $this->render('ADLearningBundle:Course:edit_courses.html.twig', array('list_courses' => $list_courses));
+    }
+
+    public function createAction(Request $request) {
+
+        $course = new Course();
+
+        $formbuilder = $this->get('form.factory')->createBuilder('form', $course);
+
+        $formbuilder->add('course_name', 'text')
+                ->add('course_level', 'integer')
+                ->add('submit', 'submit');
+
+        $form = $formbuilder->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $course = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($course);
+            $em->flush();
+        }
+
+        return $this->render('ADLearningBundle:Course:create_course.html.twig', array('form' => $form->createView()));
+    }
+
+    public function edit_one_courseAction($id) {
+
+        $course = new Course();
+        $repositoryCourse = $this->getDoctrine()->getManager()->getRepository('ADLearningBundle:Course');
+        $course = $repositoryCourse->find($id);
+
+        $repositoryCourseModule = $this->getDoctrine()->getManager()->getRepository('ADLearningBundle:CourseModuleLink');
+        $modules = $repositoryCourseModule->findAllModulesByCourse($course);
+
+        return $this->render('ADLearningBundle:Course:edit_one_course.html.twig', array(
+                    'id' => $id,
+                    'course' => $course,
+                    'modules' => $modules
+        ));
+    }
+
+}

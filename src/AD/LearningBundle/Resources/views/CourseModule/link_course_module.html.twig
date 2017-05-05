@@ -1,0 +1,20 @@
+
+{% extends "ADLearningBundle::layout.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <h2>Link a module to a course</h2>
+        <ul>
+            {{ form_start(form) }}
+            {% for course in form.courses%}
+                <li>{{ form_row(course.courseName) }}</li>
+
+            {% endfor %}
+            {% for module in form.modules%}
+                <li>{{ form_row(module.moduleName) }}</li>
+
+            {% endfor %}
+        </ul>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+ad_learning_edit_courses:
+    path:     /edit_courses
+    defaults: { _controller: ADLearningBundle:Course:edit }
+    
+ad_learning_create_module:
+    path:    /create_module
+    defaults: {_controller: ADLearningBundle:Module:create}
+    
+ad_learning_create_course:
+    path:    /create_course
+    defaults: {_controller: ADLearningBundle:Course:create}
+    
+ad_learning_link_module:
+    path:    /link_module
+    defaults: {_controller: ADLearningBundle:CourseModuleLink:link}
+    
+ad_learning_edit_one_course:
+    path:    /edit_one_course/{id}
+    defaults: {_controller: ADLearningBundle:Course:edit_one_course}
+    requirements:
+        id: \d+
+

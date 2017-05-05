@@ -1,0 +1,11 @@
+ad_learning:
+    resource: "@ADLearningBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+admin:
+    resource: "@ADAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

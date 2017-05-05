@@ -1,0 +1,49 @@
+<?php
+// src/AD/LearningBundle/Entity/CourseMOduleLink.php
+
+namespace AD\LearningBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use AD\LearningBundle\Entity\Course;
+use AD\LearningBundle\Entity\Module;
+
+/**
+ * Module
+ *
+ * @ORM\Table(name="course_module_link")
+ * @ORM\Entity(repositoryClass="AD\LearningBundle\Repository\CourseModuleLinkRepository")
+ */
+class CourseModuleLink
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
+   /**
+     *@ORM\ManyToOne(targetEntity="AD\LearningBundle\Entity\Module")
+     *@ORM\JoinColumn(nullable=false)
+     */
+    private $module;
+
+   /**
+     *@ORM\ManyToOne(targetEntity="AD\LearningBundle\Entity\Course")
+     *@ORM\JoinColumn(nullable=false)
+     */
+    private $course;
+
+   /**
+     * @var int
+     *
+     * @ORM\Column(name="weighting", type="integer")
+     */
+    private $weighting;
+    
+
+}

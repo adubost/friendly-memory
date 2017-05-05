@@ -1,0 +1,44 @@
+{# app/Resources/views/layout.html.twig #}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Welcome to the Aude University!{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets 
+            '@bootstrap_css'
+            filter='cssrewrite' 
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            
+            {% endstylesheets %}
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href='{{ path('ad_admin_welcome')}}'>Aude University</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href='{{ path('ad_admin_welcome')}}'>Home</a></li>
+                    <li><a href='{{ path('ad_learning_edit_courses') }}'>Our courses</a></li>
+                    <li><a class="admin" href='{{ path('ad_learning_create_course') }}'>Create a course</a></li>
+                    <li><a class="admin" href='{{ path('ad_learning_create_module') }}'>Create a module</a></li>
+                    <li><a class="admin" href='{{ path('ad_learning_link_module') }}'>Link a module to a course</a></li>
+                </ul>
+            </div>
+        </nav>
+    {% block body %}{% endblock %}
+    <footer>
+        <p>The sky's the limit © {{ 'now'|date('Y') }} and beyond.</p>
+    </footer>
+    {% block javascripts %}
+        {% javascripts '@jquery' '@bootstrap_js'%}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+</body>
+</html>

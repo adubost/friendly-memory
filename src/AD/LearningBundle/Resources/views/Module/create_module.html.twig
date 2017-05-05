@@ -1,0 +1,12 @@
+{# empty Twig template #}
+
+{% extends "ADLearningBundle::layout.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <h2>create a module</h2>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

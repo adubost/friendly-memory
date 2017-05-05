@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/adubost/NetBeansProjects/aude_system_project/src/AD/LearningBundle/Resources/views/Module/create_module.html.twig</file>
+            <file>file:/Users/adubost/NetBeansProjects/aude_system_project/src/AD/LearningBundle/Resources/views/Course/create_course.html.twig</file>
+            <file>file:/Users/adubost/NetBeansProjects/aude_system_project/src/AD/AdminBundle/Resources/views/Welcome/welcome.html.twig</file>
+            <file>file:/Users/adubost/NetBeansProjects/aude_system_project/src/AD/AdminBundle/Resources/views/layout.html.twig</file>
+            <file>file:/Users/adubost/NetBeansProjects/aude_system_project/src/AD/LearningBundle/Entity/Module.php</file>
+            <file>file:/Users/adubost/NetBeansProjects/aude_system_project/src/AD/AdminBundle/Resources/config/routing.yml</file>
+            <file>file:/Users/adubost/NetBeansProjects/aude_system_project/src/AD/LearningBundle/Controller/CourseController.php</file>
+            <file>file:/Users/adubost/NetBeansProjects/aude_system_project/src/AD/LearningBundle/Resources/views/Course/edit_courses.html.twig</file>
+            <file>file:/Users/adubost/NetBeansProjects/aude_system_project/src/AD/LearningBundle/Entity/Course.php</file>
+            <file>file:/Users/adubost/NetBeansProjects/aude_system_project/src/AD/AdminBundle/Controller/WelcomeController.php</file>
+            <file>file:/Users/adubost/NetBeansProjects/aude_system_project/app/Resources/views/layout.html.twig</file>
+            <file>file:/Users/adubost/NetBeansProjects/aude_system_project/src/AD/LearningBundle/Resources/config/routing.yml</file>
+            <file>file:/Users/adubost/NetBeansProjects/aude_system_project/src/AD/LearningBundle/Controller/ModuleController.php</file>
+        </group>
+    </open-files>
+</project-private>
