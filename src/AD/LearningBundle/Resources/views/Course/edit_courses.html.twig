@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container">
         <div class="jumbotron text-center">
-            <h2>Courses</h2>
+            <h2>Welcome {{ app.session.get('user_name') }} - Courses</h2>
         </div>
         <div class="container">
             <div class='row'>

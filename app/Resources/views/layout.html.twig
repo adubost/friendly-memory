@@ -24,9 +24,11 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href='{{ path('ad_admin_welcome')}}'>Home</a></li>
                     <li><a href='{{ path('ad_learning_edit_courses') }}'>Our courses</a></li>
+                    {% if app.session.get('user_name') != NULL %}
                     <li><a class="admin" href='{{ path('ad_learning_create_course') }}'>Create a course</a></li>
                     <li><a class="admin" href='{{ path('ad_learning_create_module') }}'>Create a module</a></li>
                     <li><a class="admin" href='{{ path('ad_learning_link_module') }}'>Link a module to a course</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -35,7 +37,7 @@
         <p>The sky's the limit © {{ 'now'|date('Y') }} and beyond.</p>
     </footer>
     {% block javascripts %}
-        {% javascripts '@jquery' '@bootstrap_js'%}
+        {% javascripts '@jquery' '@bootstrap_js' 'js/main.js' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
     {% endblock %}

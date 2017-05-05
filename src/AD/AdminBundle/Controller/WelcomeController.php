@@ -36,10 +36,12 @@ class WelcomeController extends Controller {
             ));
 
             if ($query_user) {
-                
+                $session = $request->getSession();
+                $session->set('user_name', $user->getUsername());
                 return $this->redirectToRoute('ad_learning_edit_courses');
             }
-
+            $session = $request->getSession();
+            $session->clear();
             return $this->redirectToRoute('ad_admin_welcome');
         }
         return $this->render('ADAdminBundle:Welcome:welcome.html.twig', array(
