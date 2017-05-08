@@ -1,4 +1,5 @@
 <?php
+
 // src/AD/LearningBundle/Entity/CourseMOduleLink.php
 
 namespace AD\LearningBundle\Entity;
@@ -14,46 +15,36 @@ use AD\LearningBundle\Entity\Module;
  * @ORM\Table(name="course_module_link")
  * @ORM\Entity(repositoryClass="AD\LearningBundle\Repository\CourseModuleLinkRepository")
  */
-class CourseModuleLink
-{
+class CourseModuleLink {
+
+  
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\ManyToOne(targetEntity="AD\LearningBundle\Entity\Module")
+     * @ORM\JoinColumn(nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-
-   /**
-     *@ORM\ManyToOne(targetEntity="AD\LearningBundle\Entity\Module")
-     *@ORM\JoinColumn(nullable=false)
      */
     private $module;
 
-   /**
-     *@ORM\ManyToOne(targetEntity="AD\LearningBundle\Entity\Course")
-     *@ORM\JoinColumn(nullable=false)
+    /**
+     * @ORM\ManyToOne(targetEntity="AD\LearningBundle\Entity\Course")
+     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Id
      */
     private $course;
 
-   /**
+    /**
      * @var int
      *
      * @ORM\Column(name="weighting", type="integer")
      */
     private $weighting;
-    
-
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -63,8 +54,7 @@ class CourseModuleLink
      * @param integer $weighting
      * @return CourseModuleLink
      */
-    public function setWeighting($weighting)
-    {
+    public function setWeighting($weighting) {
         $this->weighting = $weighting;
 
         return $this;
@@ -75,8 +65,7 @@ class CourseModuleLink
      *
      * @return integer 
      */
-    public function getWeighting()
-    {
+    public function getWeighting() {
         return $this->weighting;
     }
 
@@ -86,8 +75,7 @@ class CourseModuleLink
      * @param \AD\LearningBundle\Entity\Module $module
      * @return CourseModuleLink
      */
-    public function setModules(\AD\LearningBundle\Entity\Module $module)
-    {
+    public function setModules(\AD\LearningBundle\Entity\Module $module) {
         $this->module = $module;
 
         return $this;
@@ -98,8 +86,7 @@ class CourseModuleLink
      *
      * @return \AD\LearningBundle\Entity\Module 
      */
-    public function getModules()
-    {
+    public function getModules() {
         return $this->module;
     }
 
@@ -109,8 +96,7 @@ class CourseModuleLink
      * @param \AD\LearningBundle\Entity\Course $course
      * @return CourseModuleLink
      */
-    public function setCourses(\AD\LearningBundle\Entity\Course $course)
-    {
+    public function setCourses(\AD\LearningBundle\Entity\Course $course) {
         $this->course = $course;
 
         return $this;
@@ -121,8 +107,8 @@ class CourseModuleLink
      *
      * @return \AD\LearningBundle\Entity\Course 
      */
-    public function getCourses()
-    {
+    public function getCourses() {
         return $this->course;
     }
+
 }
