@@ -24,6 +24,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href='{{ path('ad_admin_welcome')}}'>Home</a></li>
                     <li><a href='{{ path('ad_learning_edit_courses') }}'>Our courses</a></li>
+                    <li><a href='{{ path('ad_learning_edit_modules') }}'>Our Modules</a></li>
                     {% if app.session.get('user_name') != NULL %}
                     <li><a class="admin" href='{{ path('ad_learning_create_course') }}'>Create a course</a></li>
                     <li><a class="admin" href='{{ path('ad_learning_create_module') }}'>Create a module</a></li>

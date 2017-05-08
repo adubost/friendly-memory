@@ -1,0 +1,26 @@
+{# empty Twig template #}
+
+{% extends "ADLearningBundle::layout.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h2>Welcome {{ app.session.get('user_name') }} - Modules</h2>
+        </div>
+        <div class="container">
+            <div class='row'>
+                <div class="col-sm-9">
+                    <ul class="list-group">
+                        {% for module in list_modules%}
+                            <li class="list-group-item">{{ module.moduleName }}</li>
+                            {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+{# empty Twig template #}

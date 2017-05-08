@@ -64,4 +64,10 @@ class ModuleController extends Controller{
              'list_courses' => $list_courses
          ));
      }
+     
+     public function editAction(){
+        $repository = $this->getDoctrine()->getManager()->getRepository('ADLearningBundle:Module');
+        $list_modules = $repository->findAll();
+        return $this->render('ADLearningBundle:Module:edit_modules.html.twig', array('list_modules' => $list_modules));
+     }
 }

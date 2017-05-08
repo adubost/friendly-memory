@@ -1,7 +1,9 @@
 ad_learning_edit_courses:
     path:     /edit_courses
     defaults: { _controller: ADLearningBundle:Course:edit }
-    
+ad_learning_edit_modules:
+    path:     /edit_modules
+    defaults: { _controller: ADLearningBundle:Module:edit }
 ad_learning_create_module:
     path:    /create_module
     defaults: {_controller: ADLearningBundle:Module:create}
