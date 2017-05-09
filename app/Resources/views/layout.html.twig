@@ -25,11 +25,14 @@
                     <li class="active"><a href='{{ path('ad_admin_welcome')}}'>Home</a></li>
                     <li><a href='{{ path('ad_learning_edit_courses') }}'>Our courses</a></li>
                     <li><a href='{{ path('ad_learning_edit_modules') }}'>Our Modules</a></li>
-                    {% if is_granted('ROLE_ADMIN') %}
-                    <li><a class="admin" href='{{ path('ad_learning_create_course') }}'>Create a course</a></li>
-                    <li><a class="admin" href='{{ path('ad_learning_create_module') }}'>Create a module</a></li>
-                    <li><a class="admin" href='{{ path('ad_learning_link_module') }}'>Link a module to a course</a></li>
-                    {% endif %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <li><a class="admin" href='{{ path('ad_learning_create_course') }}'>Create a course</a></li>
+                        <li><a class="admin" href='{{ path('ad_learning_create_module') }}'>Create a module</a></li>
+                        <li><a class="admin" href='{{ path('ad_learning_link_module') }}'>Link a module to a course</a></li>
+                        {% endif %}
+                        {% if is_granted('ROLE_USER') %}
+                        <li>Welcome {{ app.user.username }}</li>
+                        {% endif %}
                 </ul>
             </div>
         </nav>
