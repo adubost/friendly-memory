@@ -15,13 +15,14 @@ class CourseModuleLinkType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('courses', EntityType::class, array(
+        $builder
+                ->add('courses', EntityType::class, array(
                         'class' => 'ADLearningBundle:Course',
-                        'choice_label' => 'courseName'
+                        'property' => 'courseName'
                             ))
                 ->add('modules', EntityType::class, array(
                         'class' => 'ADLearningBundle:Module',
-                        'choice_label' => 'moduleName'
+                        'property' => 'moduleName'
                     ))
                 ->add('weighting', 'integer')
                 ->add('Link', 'submit');
