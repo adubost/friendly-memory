@@ -5,11 +5,9 @@
 namespace AD\LearningBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use AD\LearningBundle\Entity\CourseModuleLink;
 use Symfony\Component\HttpFoundation\Request;
 use AD\LearningBundle\Entity\Course;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-
 
 class CourseController extends Controller {
 
@@ -19,7 +17,6 @@ class CourseController extends Controller {
         return $this->render('ADLearningBundle:Course:edit_courses.html.twig', array('list_courses' => $list_courses));
     }
 
-    
     /**
      * 
      * @param Request $request
@@ -27,25 +24,15 @@ class CourseController extends Controller {
      * @Security("has_role('ROLE_ADMIN')")
      */
     public function createAction(Request $request) {
-     
-
-        //check if the user has ROLE_ADMIN 
-//    if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
-//        // Else we throw a denid exception
-//      throw new AccessDeniedException('Acces limited to the administrators');
-//    }
-
 
         $course = new Course();
 
         $formbuilder = $this->get('form.factory')->createBuilder('form', $course);
-
         $formbuilder->add('course_name', 'text')
                 ->add('course_level', 'integer')
                 ->add('submit', 'submit');
 
         $form = $formbuilder->getForm();
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
