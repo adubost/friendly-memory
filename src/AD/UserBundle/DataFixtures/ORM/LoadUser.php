@@ -23,6 +23,13 @@ class LoadUser implements FixtureInterface {
             $manager->persist($user);
         }
 
+        $user_admin = new User();
+        $user_admin->setUsername('admin');
+        $user_admin->setPassword('admin');
+        $user_admin->setSalt('');
+        $user_admin->setRoles(array('ROLE_ADMIN'));
+        $manager->persist($user_admin);
+
         $manager->flush();
     }
 

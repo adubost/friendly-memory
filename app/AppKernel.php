@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new AD\LearningBundle\ADLearningBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new AD\UserBundle\ADUserBundle(),
+            new FOS\UserBundle\FOSUserBundle,
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
