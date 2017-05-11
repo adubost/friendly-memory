@@ -6,7 +6,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class ADUserBundle extends Bundle
 {
-    public function getParents(){
+    public function getParent(){
         return 'FOSUserBundle';
     }
 }
