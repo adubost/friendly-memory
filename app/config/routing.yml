@@ -14,16 +14,6 @@ app:
     resource: '@AppBundle/Controller/'
     type: annotation
     
-login: 
-    pattern: /login
-    defaults: {_controller: ADUserBundle:Security:login }
-    
-login_check:
-    pattern: /login_check
-
-logout:
-    pattern: /logout
-    
 fos_user-security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
     

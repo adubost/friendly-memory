@@ -26,14 +26,14 @@ security:
 
         main:
             pattern: ^/
-            anonymous: false
+            anonymous: true
             provider: main
             form_login:
                 login_path: fos_user_security_login
                 check_path: fos_user_security_check
             logout:
                 path:   fos_user_security_logout
-                target: /edit_courses
+                target: fos_user_security_login
             remember_me:
                 key: %secret%
     

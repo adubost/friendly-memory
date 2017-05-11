@@ -30,9 +30,13 @@
                         <li><a class="admin" href='{{ path('ad_learning_create_module') }}'>Create a module</a></li>
                         <li><a class="admin" href='{{ path('ad_learning_link_module') }}'>Link a module to a course</a></li>
                         {% endif %}
-                        {% if is_granted('ROLE_USER') %}
-                        <li>Welcome {{ app.user.username }}</li>
-                        {% endif %}
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        Hello {{ app.user.username }}
+                        
+                        <button type="button" class="btn btn-default navbar-btn"><a href="{{ path('fos_user_security_logout') }}">Deconnexion</a></button>
+                        {% else %}
+                        <button type="button" class="btn btn-default navbar-btn"><a href="{{ path('fos_user_security_login') }}">Sign In</a></button>
+                    {% endif %}
                 </ul>
             </div>
         </nav>

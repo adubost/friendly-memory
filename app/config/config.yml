@@ -13,7 +13,7 @@ parameters:
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.root_dir%/config/routing.yml'
@@ -106,7 +106,6 @@ assetic:
         jquery:
             inputs:
                 - %kernel.root_dir%/../vendor/components/jquery/jquery.js
- 
 fos_user:
     db_driver: orm
     firewall_name: main
