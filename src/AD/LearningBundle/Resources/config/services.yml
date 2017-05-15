@@ -1,4 +1,10 @@
 services:
-#    ad_learning.example:
-#        class: AD\LearningBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    
+    ad_learning.beta.html:
+        class: AD\LearningBundle\Beta\BetaHTML
+    
+    ad_learning.beta.listener:
+        class: AD\LearningBundle\Beta\BetaListener
+        arguments: [@ad_learning.beta.html, "2017-05-19"]
+        tags:
+            - { name: kernel.event_listener, event: kernel.response, method: processBeta }
